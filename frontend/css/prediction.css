@@ -1,0 +1,95 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.prediction-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 50px auto;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: #1e3a8a;
+}
+
+.page-header p {
+    color: #64748b;
+}
+
+.page-header a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.prediction-card,
+.information-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.prediction-card h2,
+.information-card h2 {
+    margin-top: 0;
+}
+
+.prediction-card p,
+.information-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 15px;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.input-hint {
+    font-size: 13px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 13px 22px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
