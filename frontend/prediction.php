@@ -20,6 +20,7 @@ if (!isset($_SESSION["user_id"])) {
     <title>Molecular Prediction | Molecular Platform</title>
 
     <link rel="stylesheet" href="css/prediction.css">
+    <link rel="stylesheet" href="../../frontend/css/result.css">
 </head>
 
 <body>

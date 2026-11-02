@@ -79,47 +79,133 @@ try {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Result</title>
+
+    <title>Prediction Results | Molecular Platform</title>
+
+    <link rel="stylesheet" href="../../frontend/css/result.css">
 </head>
 
 <body>
 
-    <h1>Molecular Prediction Result</h1>
+    <div class="result-container">
 
-    <p>
-        <strong>SMILES:</strong>
-        <?php echo htmlspecialchars($result["smiles"]); ?>
-    </p>
+        <!-- Header -->
+        <div class="result-header">
 
-    <p>
-        <strong>Predicted logS:</strong>
-        <?php echo htmlspecialchars((string)$result["logS"]); ?>
-    </p>
+            <h1>Molecular Prediction Results</h1>
 
-    <p>
-        <strong>Classification:</strong>
-        <?php echo htmlspecialchars($result["classification"]); ?>
-    </p>
+            <p>
+                Your molecular solubility prediction has been completed.
+            </p>
 
-    <p>
-        <strong>Similarity:</strong>
-        <?php echo htmlspecialchars((string)$result["similarity"]); ?>
-    </p>
+        </div>
 
-    <?php if (!empty($result["warning"])): ?>
-        <p>
-            <strong>Warning:</strong>
-            <?php echo htmlspecialchars($result["warning"]); ?>
-        </p>
-    <?php endif; ?>
 
-    <a href="../../frontend/prediction.php">Try Another Molecule</a>
+        <!-- Main Result -->
+        <div class="main-result">
+
+            <span class="result-label">
+                Predicted Solubility (logS)
+            </span>
+
+            <div class="log-value">
+                <?php echo htmlspecialchars((string)$result["logS"]); ?>
+            </div>
+
+            <p>
+                Estimated logarithmic solubility in mol/L.
+            </p>
+
+        </div>
+
+
+        <!-- Result Cards -->
+        <div class="result-grid">
+
+            <div class="result-card">
+
+                <h3>Classification</h3>
+
+                <p>
+                    <?php echo htmlspecialchars($result["classification"]); ?>
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>Molecular Similarity</h3>
+
+                <p>
+                    <?php
+                    echo htmlspecialchars(
+                        (string)($result["similarity"] * 100)
+                    ) . "%";
+                    ?>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SMILES -->
+        <div class="smiles-box">
+
+            <h3>Input Molecule (SMILES)</h3>
+
+            <p class="smiles-text">
+                <?php echo htmlspecialchars($result["smiles"]); ?>
+            </p>
+
+        </div>
+
+
+        <!-- Warning -->
+        <?php if (!empty($result["warning"])): ?>
+
+            <div class="warning-box">
+
+                <strong>Prediction Warning</strong>
+
+                <p>
+                    <?php echo htmlspecialchars($result["warning"]); ?>
+                </p>
+
+            </div>
+
+        <?php endif; ?>
+
+
+        <!-- Actions -->
+        <div class="result-actions">
+
+            <a href="../../frontend/prediction.php"
+               class="action-button">
+                Try Another Molecule
+            </a>
+
+            <a href="../../frontend/history.php"
+               class="action-button secondary-button">
+                View History
+            </a>
+
+            <a href="../../dashboard.php"
+               class="action-button secondary-button">
+                Dashboard
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
