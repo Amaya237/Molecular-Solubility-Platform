@@ -38,7 +38,7 @@ $username = htmlspecialchars($_SESSION["username"]);
             <nav>
                 <a href="#overview" class="active">Dashboard</a>
                 <a href="frontend/prediction.php">New Prediction</a>
-                <a href="#history">Prediction History</a>
+                <a href="frontend/history.php">Prediction History</a>
                 <a href="backend/auth/logout.php">Logout</a>
             </nav>
 
@@ -86,8 +86,8 @@ $username = htmlspecialchars($_SESSION["username"]);
                         machine learning model.
                     </p>
 
-                    <a href="#prediction" class="primary-button">
-                        Coming Soon
+                    <a href="frontend/prediction.php" class="primary-button">
+                        Predict
                     </a>
 
                 </div>
@@ -102,8 +102,8 @@ $username = htmlspecialchars($_SESSION["username"]);
                         molecular solubility predictions.
                     </p>
 
-                    <a href="#history" class="primary-button">
-                        Coming Soon
+                    <a href="frontend/history.php" class="primary-button">
+                        View
                     </a>
 
                 </div>
